@@ -1,11 +1,11 @@
 import React from 'react';
 
 function GuessInput({guesses, setGuesses}) {
-    const [guess, setGuess] = React.useState('')
+    const [tentativeGuess, setTentativeGuess] = React.useState('')
 
     function addGuess() {
       const newGuess = {
-        guess: guess, 
+        guess: tentativeGuess, 
         id: crypto.randomUUID()
       }
 
@@ -17,9 +17,9 @@ function GuessInput({guesses, setGuesses}) {
     function handleSubmit(event) {
         event.preventDefault();
     
-        console.log({guess})
+        console.log({tentativeGuess})
         addGuess()
-        setGuess('')
+        setTentativeGuess('')
     }
 
     return (
@@ -35,10 +35,10 @@ function GuessInput({guesses, setGuesses}) {
           required
           id='guess-input'
           type="text"
-          value={guess} 
+          value={tentativeGuess} 
           onChange={event => {
           const newGuess = event.target.value.toUpperCase()
-          setGuess(newGuess);
+          setTentativeGuess(newGuess);
           }}
           pattern="[a-zA-Z]{5}"
           title="Please provide exactly 5 letters"
