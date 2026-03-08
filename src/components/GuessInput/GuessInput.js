@@ -13,7 +13,6 @@ function GuessInput({guesses, setGuesses}) {
 
       setGuesses(nextGuesses)
     }
-    
 
     function handleSubmit(event) {
         event.preventDefault();
