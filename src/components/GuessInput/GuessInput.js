@@ -1,7 +1,7 @@
 import React from 'react';
 
 function GuessInput() {
-    const [newGuess, setNewGuess] = React.useState('')
+    const [guess, setGuess] = React.useState('')
 
     return (
       <>
@@ -10,10 +10,10 @@ function GuessInput() {
       onSubmit={(event) => {
         event.preventDefault();
     
-        setNewGuess(event.target.value)
-        console.log({guess: newGuess})
+        setGuess(event.target.value)
+        console.log({guess: guess})
 
-        setNewGuess('')
+        setGuess('')
       }} 
       >
         <label htmlFor='guess-input'>
@@ -22,9 +22,9 @@ function GuessInput() {
         <input 
           id='guess-input'
           type="text"
-          value={newGuess} 
+          value={guess} 
           onChange={event => {
-          setNewGuess(event.target.value.toUpperCase());
+          setGuess(event.target.value.toUpperCase());
           }}
           pattern="[A-Z]{5,5}"
           title="Please provide exactly 5 letters"
