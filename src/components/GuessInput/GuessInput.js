@@ -4,12 +4,7 @@ function GuessInput({guesses, setGuesses}) {
     const [tentativeGuess, setTentativeGuess] = React.useState('')
 
     function addGuess() {
-      const newGuess = {
-        guess: tentativeGuess, 
-        id: crypto.randomUUID()
-      }
-
-      const nextGuesses = [...guesses, newGuess]
+      const nextGuesses = [...guesses, tentativeGuess]
 
       setGuesses(nextGuesses)
     }
@@ -17,7 +12,6 @@ function GuessInput({guesses, setGuesses}) {
     function handleSubmit(event) {
         event.preventDefault();
     
-        console.log({tentativeGuess})
         addGuess()
         setTentativeGuess('')
     }
