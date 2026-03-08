@@ -6,7 +6,6 @@ function GuessInput() {
     function handleSubmit(event) {
         event.preventDefault();
     
-        setGuess(event.target.value)
         console.log({guess})
 
         setGuess('')
@@ -22,13 +21,15 @@ function GuessInput() {
           Enter guess:
         </label>
         <input 
+          required
           id='guess-input'
           type="text"
           value={guess} 
           onChange={event => {
-          setGuess(event.target.value.toUpperCase());
+          const newGuess = event.target.value.toUpperCase()
+          setGuess(newGuess);
           }}
-          pattern="[A-Z]{5,5}"
+          pattern="[a-zA-Z]{5}"
           title="Please provide exactly 5 letters"
         >
         </input>
