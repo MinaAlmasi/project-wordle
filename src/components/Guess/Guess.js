@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { range } from "../../utils";
-import { answer } from "../Game";
 import { checkGuess } from "../../game-helpers"
 
 
@@ -11,7 +10,7 @@ function Cell({ letter, status }) {
     return <span className={className}>{letter}</span>;
 }
 
-function Guess({ value }) {
+function Guess({ value, answer}) {
   const checkedGuess = checkGuess(value, answer)
 
   return (
