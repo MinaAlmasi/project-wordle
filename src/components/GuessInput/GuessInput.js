@@ -21,6 +21,7 @@ function GuessInput({handleSubmitGuess, status}) {
         </label>
         <input 
           required
+          disabled = {status !== "running"}
           id='guess-input'
           type="text"
           value={tentativeGuess} 
@@ -30,7 +31,6 @@ function GuessInput({handleSubmitGuess, status}) {
           }}
           pattern="[a-zA-Z]{5}"
           title="Please provide exactly 5 letters"
-          disabled = {status != "running"}
         >
         </input>
       </form>
