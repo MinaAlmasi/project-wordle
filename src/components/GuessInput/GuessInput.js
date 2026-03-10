@@ -1,6 +1,6 @@
 import React from 'react';
 
-function GuessInput({handleSubmitGuess}) {
+function GuessInput({handleSubmitGuess, status}) {
     const [tentativeGuess, setTentativeGuess] = React.useState('')
 
     function handleSubmit(event) {
@@ -30,6 +30,7 @@ function GuessInput({handleSubmitGuess}) {
           }}
           pattern="[a-zA-Z]{5}"
           title="Please provide exactly 5 letters"
+          disabled = {status != "running"}
         >
         </input>
       </form>
